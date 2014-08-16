@@ -1,0 +1,12 @@
+# Site settings
+title: Юрий Касперович
+email: ykas.gg@gmail.com
+description: "Меня зовут Касперович Юрий, белорусский веб-разработчик."
+baseurl: ""
+url: "http://yukas.by"
+twitter_username: yukas
+github_username:  yukas
+
+# Build settings
+markdown: kramdown
+permalink: pretty
