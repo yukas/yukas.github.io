@@ -1,5 +1,5 @@
 # Site settings
-title: Юрий Касперович
+title: Заметки белорусского веб-разработчика
 email: ykas.gg@gmail.com
 description: "Меня зовут Касперович Юрий, я белорусский веб-разработчик."
 baseurl: ""
@@ -10,3 +10,5 @@ github_username:  yukas
 # Build settings
 markdown: kramdown
 permalink: pretty
+
+me: Юрий Каспервич
