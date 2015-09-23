@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "Remove database.yml from your Rails repository"
-date:   2014-08-16 22:54:38
-categories: jekyll update
+date:   2015-09-23 15:57:38
+categories: rails tips
 ---
 
 # Problem
