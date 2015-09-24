@@ -1,3 +1,10 @@
+---
+layout: post
+title:  "What is fast-forward in git"
+date:   2015-09-24 17:47:38
+categories: git
+---
+
 # What is fast-forward in git
 
 ## Problem
