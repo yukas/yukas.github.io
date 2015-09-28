@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Обо мне
+title: About
 permalink: /about/
 ---
 
-Меня зовут Касперович Юрий, я белорусский веб-разработчик.
+My name is Yuri Kasperovich and I am a programmer.

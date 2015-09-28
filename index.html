@@ -4,7 +4,7 @@ layout: default
 
 <div class="home">
 
-  <!-- <h1>Заметки</h1> -->
+  <!-- <h1>Notes</h1> -->
 
   <ul class="posts">
     {% for post in site.posts %}
@@ -15,6 +15,5 @@ layout: default
     {% endfor %}
   </ul>
 
-  <p class="rss-subscribe"><a href="{{ "/feed.xml" | prepend: site.baseurl }}">Подписаться</a> на обновления</p>
-
+  <p class="rss-subscribe"><a href="{{ "/feed.xml" | prepend: site.baseurl }}">Subscribe</a></p>
 </div>

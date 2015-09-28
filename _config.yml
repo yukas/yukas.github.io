@@ -1,7 +1,7 @@
 # Site settings
-title: Заметки белорусского веб-разработчика
+title: Yuri Kasperovich's Personal Blog
 email: ykas.gg@gmail.com
-description: "Меня зовут Касперович Юрий, я белорусский веб-разработчик."
+description: "Hello, my name is Yuri Kasperovich, welcome to my personal blog"
 baseurl: ""
 url: "http://yukas.by"
 twitter_username: yukas
@@ -11,4 +11,4 @@ github_username:  yukas
 markdown: kramdown
 permalink: pretty
 
-me: Юрий Каспервич
+me: Yuri Kasperovich
