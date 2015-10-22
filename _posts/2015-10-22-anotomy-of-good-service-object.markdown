@@ -15,7 +15,7 @@ categories: ruby design
 ## Example of good service object
 
 {% highlight ruby %}
-class CreateUser
+class UserCreator
   attr_reader :email, :first_name, :last_name
   attr_reader :created_user
 
@@ -33,13 +33,13 @@ class CreateUser
   end
 
   def user_created?
-    @created_user.present?
+    created_user.present?
   end
 
   private
 
-  def check_user_existance
-    User.exists?(...)
+  def check_user_existance!
+    raise "User already exists" if User.exists?(...)
   end
 
   def create_user_object
@@ -50,7 +50,7 @@ end
 
 ## Single responsibility
 
-As we see below, UserCreator is single responsible for creating user. No email
+As we see above, UserCreator is single responsible for creating user. No email
 sending or whatever. If you need, for example, to send welcome email it's
 probably should be done from another service, say `WelcomeEmailSender`. Why?
 The smaller construction blocks in your program the less pain it would
@@ -66,7 +66,7 @@ for it's state also changes it or sends email.
 
 ## Transparent about input/output
 In other words you should always be able to inspect input parameters of the
-service, which are usually got supplied through constructor, hense you should
+service, which usually got supplied through constructor, hense you should
 have attribute readers for every input parameter.
 
 ## Check it's own input
@@ -97,8 +97,11 @@ describe UserCreator do
         }.to raise_error(/No email given/)
       end
     end
-  end
 
+    context "user already exists" do
+      ...
+    end
+  end
 end
 {% endhighlight %}
 
