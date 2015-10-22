@@ -14,6 +14,8 @@ categories: ruby design
 
 ## Example of good service object
 
+Let's start by giving a little example:
+
 {% highlight ruby %}
 class UserCreator
   attr_reader :email, :first_name, :last_name
