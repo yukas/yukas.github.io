@@ -3,6 +3,7 @@ layout: post
 title:  "Vim splits"
 date:   2015-10-21 15:57:38
 categories: vim
+comments: true
 ---
 
 ### Open file in separate split window in vim

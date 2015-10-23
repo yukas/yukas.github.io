@@ -3,6 +3,7 @@ layout: post
 title:  "Starting to learn Vim"
 date:   2015-10-09 14:12:45
 categories: vim
+comments: true
 ---
 
 Main objection is to learn something cool, another objection is to be more

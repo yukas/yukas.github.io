@@ -3,6 +3,7 @@ layout: post
 title:  "Remove database.yml from your Rails repository"
 date:   2015-09-23 15:57:38
 categories: rails tips
+comments: true
 ---
 
 ## Problem
