@@ -3,6 +3,7 @@ layout: post
 title:  "Anatomy of good service object"
 date:   2015-10-22 14:52:38
 categories: ruby design
+comments: true
 ---
 
 ## What is good service object?
