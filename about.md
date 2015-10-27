@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-Welcome, my name is Yuri Kasperovich.
+My name is Yuri Kasperovich. I am from Minsk, Belarus.
 
 I am senior Ruby on Rails developer at [ihjoz](http://www.ihjoz.com) ticketing platform, I also wrote 
 [naharnet.com](http://www.naharnet.com).
