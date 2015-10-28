@@ -54,9 +54,9 @@ end
 
 ## Single responsibility
 
-As we see above, UserCreator is single responsible for creating user. No email
+As we see above, `UserCreator` is single responsible for creating user. No email
 sending or whatever. If you need, for example, to send welcome email it is
-probably should be done from another service, say *WelcomeEmailSender*.
+probably should be done from another service, say `WelcomeEmailSender`.
 The smaller construction blocks in your program the less pain it would
 be to change them.
 
@@ -68,7 +68,7 @@ will spread such checks all across the codebase. Object constructor is the one w
 
 ## Command/query separation
 
-Usually objects have two types of methods: commands and queries. Commands
+Usually objects have two types of methods: *commands* and *queries*. Commands
 change something and return nothing, queries in opposite return current
 state without changing anything. This separation brings clarity in how and when
 you use particular method, so you don't endup in situation when asking object
@@ -76,7 +76,7 @@ for it's state also changes it or sends email.
 
 ## Same level of abstraction
 
-Term abstraction is about hiding details. In **#create_user** we hide checking user existence and saving user *details* inside **#check_user_existance** and **#save_user** methods. We'd brake this rule if some details are still left inside **#create_user** method.
+Term abstraction is about hiding details. In `#create_user` we hide checking user existence and saving user *details* inside `#check_user_existance` and `#save_user` methods. We'd brake this rule if some details are still left inside `#create_user` method.
 
 ## Transparent
 
