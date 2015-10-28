@@ -6,8 +6,11 @@ permalink: /about/
 
 My name is Yuri Kasperovich. I am from Minsk, Belarus.
 
-I am senior Ruby on Rails developer at [ihjoz](http://www.ihjoz.com) ticketing platform, I also wrote 
-[naharnet.com](http://www.naharnet.com).
+Some of projects I've worked on: 
+
+* [ihjoz](http://www.ihjoz.com) ticketing platform
+* [naharnet.com](http://www.naharnet.com) news site
+* [snipsnap.it](http://www.snipsnap.it) coupon author app
 
 Checkout my [github](http://github.com/yukas) and
 [twitter](http://twitter.com/yukas).
