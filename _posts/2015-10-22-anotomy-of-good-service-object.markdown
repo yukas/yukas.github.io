@@ -8,14 +8,15 @@ comments: true
 
 ## What is good service object?
 * Single responsibility
+* Checks it's input
 * Cammand/query separation
-* Transparent about input output
-* Checks it's own input
+* Same level of abstraction
+* Transparent
 * Tested
 
 ## Example of good service object
 
-Let's start by giving a little example:
+Let's start by giving a simple example:
 
 {% highlight ruby %}
 class UserCreator
@@ -23,16 +24,16 @@ class UserCreator
   attr_reader :created_user
 
   def initialize(email, first_name, last_name)
-    @email      = String(email)
-    @first_name = String(first_name)
-    @last_name  = String(last_name)
+    @email      = email
+    @first_name = first_name
+    @last_name  = last_name
 
-    raise "No email given" if email.blank?
+    raise ArgumentError, "Missing email" if email.nil?
   end
 
   def create_user
-    check_user_existance!
-    create_user_object
+    check_user_existance
+    save_user
   end
 
   def user_created?
@@ -41,11 +42,11 @@ class UserCreator
 
   private
 
-  def check_user_existance!
+  def check_user_existance
     raise "User already exists" if User.exists?(...)
   end
 
-  def create_user_object
+  def save_user
     @created_user = User.create(...)
   end
 end
@@ -54,10 +55,16 @@ end
 ## Single responsibility
 
 As we see above, UserCreator is single responsible for creating user. No email
-sending or whatever. If you need, for example, to send welcome email it's
-probably should be done from another service, say `WelcomeEmailSender`. Why?
+sending or whatever. If you need, for example, to send welcome email it is
+probably should be done from another service, say `WelcomeEmailSender`.
 The smaller construction blocks in your program the less pain it would
 be to change them.
+
+## Checks it's input
+
+It's simple, don't check email address for being nil outside of the service. This
+will spread such checks all across the codebase. Object constructor is the one who's responsible for setting object invariant - state in which object can perform without braking. If your service needs email address to work correctly and it is not given - brake early, throw exception from constructor.
+
 
 ## Command/query separation
 
@@ -67,17 +74,17 @@ state without changing anything. This separation brings clarity in how and when
 you use particular method, so you don't endup in situation when asking object
 for it's state also changes it or sends email.
 
-## Transparent about input/output
-In other words you should always be able to inspect input parameters of the
-service, which usually got supplied through constructor, hense you should
-have attribute readers for every input parameter.
+## Same level of abstraction
 
-## Check it's own input
-It's simple, do not check email address for being nil outside of service. This
-way those checks won't spread through your codebase every time you use the
-service. I usually throw exception from constructor.
+Term abstraction is about hiding details. In `#create_user` we hide checking user existence and saving user details inside `#check_user_existance` and `#save_user` methods. We'd brake this rule if some details are still left inside `#create_user` method.
+
+## Transparent
+
+In other words you should be able to inspect input parameters, which usually got supplied
+through constructor, hense you should have attribute readers for every input parameter. This especially handy upon debugging.
 
 ## Tested
+
 According to Sandi Metz, you should test object query methods by asserting
 returned result, command methods - by asserting direct public side effect and
 outgoing command methods, by expecting to send them. Usually, I would test such
@@ -87,17 +94,17 @@ service as so:
 describe UserCreator do
   describe "#create_user" do
     it "creates user" do
-      user_creator = UserCreator.new("qwe@qwe.qwe", "Ian", "Brown")
+      user_creator = UserCreator.new("ian@brown.com", "Ian", "Brown")
       user_creator.create_user
 
-      expect(user_creator.user_created?).to eq(true)
+      expect(user_creator.create_user.first_name).to eq("Ian")
     end
 
     context "no email given" do
       it "raises exception" do
         expect {
           UserCreator.new(nil, "Ian", "Brown")
-        }.to raise_error(/No email given/)
+        }.to raise_error(/Missing email/)
       end
     end
 
@@ -108,3 +115,13 @@ describe UserCreator do
 end
 {% endhighlight %}
 
+## The anatomy
+
+![Service anatomy picture]({{ site.url }}/images/service_anatomy.jpg)
+
+## Further reading
+
+[The Single Responsibility Principle](http://www.objectmentor.com/resources/articles/srp.pdf)
+[Command Query Separation](http://martinfowler.com/bliki/CommandQuerySeparation.html)
+[Writing confident code](https://practicingruby.com/articles/confident-ruby)
+[The Magic Tricks of Testing by Sandi Metz](https://www.youtube.com/watch?v=URSWYvyc42M)
