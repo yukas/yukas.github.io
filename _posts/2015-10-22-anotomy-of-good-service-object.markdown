@@ -119,6 +119,8 @@ end
 
 ## The anatomy
 
+Trying to visualize service object I came out with this picture:
+
 ![Service anatomy picture]({{ site.url }}/images/service_anatomy.jpg)
 
 ## Further reading
