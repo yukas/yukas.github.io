@@ -125,10 +125,7 @@ Trying to visualize service object I came out with this picture:
 
 ## Further reading
 
-[The Single Responsibility Principle](http://www.objectmentor.com/resources/articles/srp.pdf)
-
-[Command Query Separation](http://martinfowler.com/bliki/CommandQuerySeparation.html)
-
-[Writing confident code](https://practicingruby.com/articles/confident-ruby)
-
-[The Magic Tricks of Testing by Sandi Metz](https://www.youtube.com/watch?v=URSWYvyc42M)
+* [The Single Responsibility Principle](http://www.objectmentor.com/resources/articles/srp.pdf)
+* [Command Query Separation](http://martinfowler.com/bliki/CommandQuerySeparation.html)
+* [Writing confident code](https://practicingruby.com/articles/confident-ruby)
+* [The Magic Tricks of Testing by Sandi Metz](https://www.youtube.com/watch?v=URSWYvyc42M)
