@@ -76,7 +76,7 @@ for it's state also changes it or sends email.
 
 ## Same level of abstraction
 
-Term abstraction is about hiding details. In *#create_user* we hide checking user existence and saving user *details* inside *#check_user_existance* and *#save_user* methods. We'd brake this rule if some details are still left inside *#create_user* method.
+Term abstraction is about hiding details. In **#create_user** we hide checking user existence and saving user *details* inside **#check_user_existance** and **#save_user** methods. We'd brake this rule if some details are still left inside **#create_user** method.
 
 ## Transparent
 
