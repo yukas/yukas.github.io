@@ -56,7 +56,7 @@ end
 
 As we see above, UserCreator is single responsible for creating user. No email
 sending or whatever. If you need, for example, to send welcome email it is
-probably should be done from another service, say `WelcomeEmailSender`.
+probably should be done from another service, say *WelcomeEmailSender*.
 The smaller construction blocks in your program the less pain it would
 be to change them.
 
@@ -76,7 +76,7 @@ for it's state also changes it or sends email.
 
 ## Same level of abstraction
 
-Term abstraction is about hiding details. In `#create_user` we hide checking user existence and saving user details inside `#check_user_existance` and `#save_user` methods. We'd brake this rule if some details are still left inside `#create_user` method.
+Term abstraction is about hiding details. In *#create_user* we hide checking user existence and saving user *details* inside *#check_user_existance* and *#save_user* methods. We'd brake this rule if some details are still left inside *#create_user* method.
 
 ## Transparent
 
@@ -97,7 +97,9 @@ describe UserCreator do
       user_creator = UserCreator.new("ian@brown.com", "Ian", "Brown")
       user_creator.create_user
 
-      expect(user_creator.create_user.first_name).to eq("Ian")
+      expect(user_creator.created_user.email).to      eq("ian@brown.com")
+      expect(user_creator.created_user.first_name).to eq("Ian")
+      expect(user_creator.created_user.last_name).to  eq("Brown")
     end
 
     context "no email given" do
@@ -122,6 +124,9 @@ end
 ## Further reading
 
 [The Single Responsibility Principle](http://www.objectmentor.com/resources/articles/srp.pdf)
+
 [Command Query Separation](http://martinfowler.com/bliki/CommandQuerySeparation.html)
+
 [Writing confident code](https://practicingruby.com/articles/confident-ruby)
+
 [The Magic Tricks of Testing by Sandi Metz](https://www.youtube.com/watch?v=URSWYvyc42M)
