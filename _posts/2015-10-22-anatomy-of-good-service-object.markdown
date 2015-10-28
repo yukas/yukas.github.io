@@ -9,7 +9,7 @@ comments: true
 ## What is good service object?
 * Single responsibility
 * Checks it's input
-* Cammand/query separation
+* Command/query separation
 * Same level of abstraction
 * Transparent
 * Tested
