@@ -18,3 +18,6 @@ comments: true
 To achive this you need to remap bang command for command line mode:
 
 ```:noremap :! :!clear; ``` - this would additinally run `clear` which will do the thing.
+
+### Switch between last two opened files
+```Ctrl-^``` - circle between last two opened files
