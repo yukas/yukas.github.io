@@ -21,3 +21,7 @@ To achive this you need to remap bang command for command line mode:
 
 ### Switch between last two opened files
 ```Ctrl-^``` - circle between last two opened files
+
+### Go to line N
+```3G``` - goes to third line
+```:21``` - goes to line 21
