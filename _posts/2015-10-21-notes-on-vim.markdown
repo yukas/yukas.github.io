@@ -14,6 +14,12 @@ comments: true
 ### Change active split
 ```Ctrl-w + w``` - circle between opened splits
 
+### Resize splits
+```:resize 60``` - changes height to 60 rows
+```:vertical resize 80``` - changes width to 80 columns
+```Ctrl-w +``` and ```Ctrl-w -``` — change height by one row
+```Ctrl-w >``` and ```Ctrl-w <``` — change width by on column
+
 ### Make bang (!) command clear screen before output
 To achive this you need to remap bang command for command line mode:
 
