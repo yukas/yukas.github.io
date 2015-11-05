@@ -57,6 +57,6 @@ test -x /usr/sbin/logrotate || exit 0
 /usr/sbin/logrotate /etc/logrotate.conf
 {% endhighlight %}
 
-It seem now you all set.
+It seem now you all set, your Rails app logs should be rotated on daily basis.
 
 Good day!
