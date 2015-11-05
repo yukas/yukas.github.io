@@ -19,7 +19,7 @@ Then, create new logrotate config file for your app:
 It should look lo this:
 
 {% highlight text %}
-/home/yukas/sample-app/shared/log/*.log {
+/home/yukas/sample-app/log/*.log {   # path to your log folder
         daily           # rotates your log on daily basis
         rotate 2        # 2 days of logs will be kept
         size 10M        # maximum size of log file is 10 Mb
