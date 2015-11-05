@@ -32,11 +32,11 @@ It should look lo this:
 
 Try to rotate your logs by running: `sudo logrotate /etc/logrotate.d/sample-app`
 
-Now you need to specify cron job for rotation to run every day:
+Now you need to specify cron job to rotate your logs every day automatically:
 
-`sudo nano /etc/cron.daily/logrotate`
+Run `sudo nano /etc/cron.daily/logrotate` to create cron config for logrotate.
 
-Chron config:
+Cron config:
 
 {% highlight text %}
 #!/bin/sh
@@ -55,10 +55,6 @@ test -x /usr/sbin/logrotate || exit 0
 /usr/sbin/logrotate /etc/logrotate.conf
 {% endhighlight %}
 
-Test your setup:
-
-`cat /var/lib/logrotate/status`
-
-You should see information about what logs got rotated and when.
+By running `cat /var/lib/logrotate/status` you can see information about what logs got rotated and when.
 
 Good day!
