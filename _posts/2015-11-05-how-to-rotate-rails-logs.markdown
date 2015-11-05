@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "How to rotate rails logs"
+title:  "How to rotate Rails logs"
 date:   2015-11-05 17:10:38
 categories: rails logs rotate logrotate
 comments: true
@@ -8,11 +8,15 @@ comments: true
 
 I am assuming you use ubuntu to run your Rails app.
 
-First, install logrotate utility:
+Firstly, install logrotate utility:
+
 `sudo apt-get update && sudo apt-get install logrotate`
 
-Then, configure it to rotate your logs:
-`sudo nano /etc/logrotate.d/sample-app` — will create new config file for your app
+Then, create new logrotate config file for your app:
+
+`sudo nano /etc/logrotate.d/sample-app`
+
+It should look lo this:
 
 {% highlight text %}
 /home/yukas/sample-app/shared/log/*.log {
@@ -27,7 +31,10 @@ Then, configure it to rotate your logs:
 {% endhighlight %}
 
 Now you need to specify cron job for rotation to run every day:
+
 `sudo nano /etc/cron.daily/logrotate`
+
+Chron config:
 
 {% highlight text %}
 #!/bin/sh
@@ -47,8 +54,9 @@ test -x /usr/sbin/logrotate || exit 0
 {% endhighlight %}
 
 Test your setup:
+
 `cat /var/lib/logrotate/status`
 
-File contains information about what logs got rotated and when.
+You should see information about what logs got rotated and when.
 
 Good day!
