@@ -30,11 +30,7 @@ It should look lo this:
 }
 {% endhighlight %}
 
-Run logrotate to see if everything working:
-
-`sudo logrotate /etc/logrotate.d/sample-app`
-
-This command should rotate your logs as per config.
+Try to rotate your logs by running: `sudo logrotate /etc/logrotate.d/sample-app`
 
 Now you need to specify cron job for rotation to run every day:
 
