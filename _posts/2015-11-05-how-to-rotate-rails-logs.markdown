@@ -6,7 +6,7 @@ categories: rails logs rotate logrotate
 comments: true
 ---
 
-I am assuming you use ubuntu to run your Rails app.
+I am assuming you use Ubuntu to run your Rails app.
 
 Firstly, install logrotate utility:
 
@@ -29,6 +29,12 @@ It should look lo this:
         notifempty      # do not rotate empty log
 }
 {% endhighlight %}
+
+Run logrotate to see if everything working:
+
+`sudo logrotate /etc/logrotate.d/sample-app`
+
+This command should rotate your logs as per config.
 
 Now you need to specify cron job for rotation to run every day:
 
