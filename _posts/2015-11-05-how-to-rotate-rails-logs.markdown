@@ -55,4 +55,6 @@ test -x /usr/sbin/logrotate || exit 0
 /usr/sbin/logrotate /etc/logrotate.conf
 {% endhighlight %}
 
+It seem now you all set.
+
 Good day!
