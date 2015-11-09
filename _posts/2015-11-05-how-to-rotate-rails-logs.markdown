@@ -6,6 +6,36 @@ categories: rails logs rotate logrotate
 comments: true
 ---
 
+## The Rails way
+
+As per [documentation](http://guides.rubyonrails.org/configuring.html#rails-general-configuration) you can
+configure Rails with a logger conforming to [interface of Log4r](http://log4r.rubyforge.org/rdoc/Log4r/Logger.html)
+or [Ruby default Logger class](http://ruby-doc.org/stdlib-2.2.3/libdoc/logger/rdoc/Logger.html) interface.
+And it turns out Ruby default Logger has build-in ability to rotate logs.
+Let's create logger which will rotate your logs every 3 days or after it grows upto 10 Mb:
+
+{% highlight ruby %}
+require "logger"
+
+logger = Logger.new("logfilename.log", 3, 10*1024*1024)
+{% endhighlight %}
+
+To configure Rails to rotate logs add this code to `production.rb`:
+
+{% highlight ruby %}
+Rails.application.configure do
+
+# ...
+
+config.logger = Logger.new(config.paths["log"].first, 3, 10*1024*1024)
+  
+# ...
+
+end
+{% endhighlight %}
+
+## Logrotate
+
 I am assuming you use Ubuntu to run your Rails app.
 
 Firstly, install logrotate utility:
