@@ -27,7 +27,7 @@ Rails.application.configure do
 
 # ...
 
-config.logger = Logger.new(config.paths["log"].first, 3, 10*1024*1024)
+config.logger = Logger.new(config.paths["log"].first, 3, 10.megabytes)
   
 # ...
 
