@@ -85,6 +85,6 @@ puts hell
 
 How nice is what? Can't wait when ruby introduces "friend mode", where on every error it will print: "You doing a great job! Keep going, man! You almost there."
 
-This is it on major Ruby 2.3.0 features, continue by looking at [full changelog](https://github.com/ruby/ruby/blob/8d9e36000747bb650d169d44dd812bfc7e360bd5/ChangeLog).
+This is it on major Ruby 2.3.0-preview1 features, continue by looking at [full changelog](https://github.com/ruby/ruby/blob/8d9e36000747bb650d169d44dd812bfc7e360bd5/ChangeLog).
 
 Good day!
