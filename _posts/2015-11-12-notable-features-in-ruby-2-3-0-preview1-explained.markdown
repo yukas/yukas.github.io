@@ -52,7 +52,7 @@ sql << "JOIN #{path_tablename} AS pt ON (st.path_id = pt.id)"
 
 ## Safe navigation operator
 
-We used to do `user.try(:company).try(:name)` the Rails way or `user && user.company && user.company.name` the Ruby way, but now we can do it as `user&.company&.name` everywhere. It's defiantly shorter. Other whan this I'd suggest not to go too deep down the chain in favour of **Low of Demeter** and just have `user&.company_name` instead.
+We used to do `user.try(:company).try(:name)` the rails way or `user && user.company && user.company.name` the ruby way, but now we can do it as `user&.company&.name` everywhere. It's defiantly shorter. Other whan this I'd suggest not to go too deep down the chain in favour of **Low of Demeter** and just have `user&.company_name` instead.
 
 Funny thing: Matz first agreed on `user.?company.?name` syntax, but later [reconsidered his decision](https://bugs.ruby-lang.org/issues/11537#note-42):
 
