@@ -40,7 +40,7 @@ sql << "FROM #{stats_tablename} AS st"
 sql << "JOIN #{path_tablename} AS pt ON (st.path_id = pt.id)"
 {% endhighlight %}
 
-With the pragma it gonna look like so:
+With the pragma it should look like so:
 
 {% highlight ruby %}
 # frozen_string_literal: true
