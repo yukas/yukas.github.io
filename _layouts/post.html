@@ -39,12 +39,3 @@ layout: default
     <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
   </noscript>
 {% endif %}
-
-<br>
-
-<h2>More posts to read</h2>
-<div class="latest-posts">
-  {% for post in site.related_posts %}
-    <a href="{{ post.url }}">{{ post.title }}</a> •
-  {% endfor %}
-</div>
