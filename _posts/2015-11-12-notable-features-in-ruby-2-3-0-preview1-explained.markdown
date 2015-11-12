@@ -6,7 +6,7 @@ categories: ruby
 comments: true
 ---
 
-## Frozen String Literal Pragma
+## Frozen string literal pragma
 
 Since string literals will be frozen by default in Ruby 3, `frozen_string_literal` pragma at your disposal to prepare for the future:
 
