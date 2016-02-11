@@ -6,7 +6,7 @@ permalink: /about/
 
 ![Service anatomy picture]({{ site.url }}/images/yuri_kasperovich.jpg)
 
-My name is Yuri Kasperovich. I am from Minsk, Belarus.
+My name is Yuri Kasperovich. I live in Minsk, Belarus.
 
 Some of projects I've worked on: 
 
